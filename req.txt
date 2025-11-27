@@ -1,0 +1,19 @@
+1)create server folder
+2) in terminal cd server -> npm init(initialize)
+3)create file index.js(entry file)
+4)install packages(express,mongoose,nodemon,cors)
+npm i express
+
+
+express-> it a framework that helps to handle requests and response
+app = express(); => app is a instance of express, 
+
+
+express is package name
+so we have to create the registration page in front end
+
+
+
+ task next i have to complete viewuser.jsx in models,controtodayller,index.js, router
+
+  

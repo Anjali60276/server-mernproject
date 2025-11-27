@@ -1,0 +1,14 @@
+// importing mongoose
+const mongoose = require("mongoose");
+
+// to create a table
+const StudentSchema = new mongoose.Schema({
+  name: { type: String, required: true },
+  email: { type: String },
+  phone: { type: Number },
+  address: { type: String },
+  password: { type: String },
+  date: { type: Date, default: Date.now },
+});
+// to create a user table in db
+module.exports = mongoose.model("Student", StudentSchema);
