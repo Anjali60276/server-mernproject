@@ -1,7 +1,8 @@
 const mongoose = require("mongoose"); 
+require('dotenv').config()
 
 
-const mongoURL = "mongodb://127.0.0.1:27017/crud" //database name is crud any name you can give take the url from mongodb compass and if local host is not working use 127.0.0.1
+const mongoURL = process.env.URI //database name is crud any name you can give take the url from mongodb compass and if local host is not working use 127.0.0.1
 const connectToMongo = async()=>{
     try{
         await mongoose.connect(mongoURL); //await is used to wait for the promise to resolve and async is used to make the function asynchronous or non blocking

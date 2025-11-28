@@ -2,7 +2,7 @@ const bcrypt = require("bcryptjs");
 const Users = require("../Models/UserModel");
 const jwt = require('jsonwebtoken');
 
-const SECRET_KEY = "mernstack"; // added: minimal necessary secret
+const SECRET = process.env.SECRET_KEY; // added: minimal necessary secret
 
 const Adduser = async (req, res) => {
   try {
@@ -80,7 +80,7 @@ const Login=async(req,res)=>{
          {
             res.json({success:false,message:"invalid user"})
          }else{
-            const Token=await jwt.sign({id: matcheduser.id}, SECRET_KEY)
+            const Token=await jwt.sign({id: matcheduser.id}, SECRET)
             console.log(Token)
             res.json({success:true, message:"Login successfully",Token})
          }

@@ -1,5 +1,6 @@
 // 1
 const express = require("express");
+require('dotenv').config()
 //2
 
 const app = express();
@@ -14,7 +15,7 @@ const connectToMongo = require("./db");
 connectToMongo();
 
 //4
-const PORTNO = 7000;
+const PORTNO = process.env.PORT  ;
 app.listen(PORTNO, () => {
   console.log("Server is running on portnumber:" + PORTNO);
 });
